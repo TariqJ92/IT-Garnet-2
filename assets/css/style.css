@@ -1,0 +1,27 @@
+/*  -------- Course Homepage Stylesheet --------  */
+
+
+/* Type Selector */
+body{
+    background-color: rgb(124, 57, 121);
+}
+
+/* ID Selector */
+
+#main-heading{
+    color:bisque;
+    text-shadow:
+}
+
+/* Class Selector */
+
+.primary{
+    border: 2px solid
+    padding: 10px;
+}
+
+/* ---psuedo selector --- */
+
+a:link, a:visited{
+    color:coral;
+}
