@@ -1,0 +1,26 @@
+$( "#CircleForm" ).validate({
+
+});
+
+function displaydiameter() {
+    {
+    document.getElementById("diameter").innerHTML = "";
+
+    var radius;
+    var radiusfp;
+    var diameter;
+    var result;
+
+    radius = document.getElementById("radius").value;
+
+    radiusfp = parseFloat( radius );
+
+    diameter = calcDiameter(radiusfp*2)
+
+    document.getElementById("diameter").innerHTML = diameter.toString();
+}
+}
+
+function calcDiameter (radiusvalue*2){
+    return radius * 2;
+}
