@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mars Rover Photo Explorer</title>
+  <meta charset="utf-8" >
+  <meta name="description" content="Mars Rover" >
+  <meta name="author" content="Tariq Jones" >
+  <meta name="keywords" content="Mars, Rover, ITEC, Bruce" >
+  <title>Mars Rover Explorer</title>
+  <link href="assets/css/style.css" rel="stylesheet" >
+</head>
+
+<body>
+    <form id="myform">
+        <div class="formcontainer">
+            <h2>Mars Rover Photo Explorer</h2>
+            <section id="table">
+                <div class="output">
+            <table border="1">
+              <tr>
+                <th scope="col">Rover</th>
+                <th scope="col">Mission Start</th>
+                <th scope="col">Mission End</th>
+              </tr>
+              <tr>
+                <td>Curiosity</td>
+                <td>08/06/2012</td>
+                <td>09/28/2019</td>
+              </tr>
+              <tr>
+                <td>Opprotunity</td>
+                <td>01/26/2004</td>
+                <td>06/11/2018</td>
+              </tr>
+              <tr>
+                <td>Spirit</td>
+                <td>01/05/2004</td>
+                <td>03/21/2004</td>
+              </tr>
+            </table>
+                </div>
+            </section>
+            <h3>Select a rover and a picture date:</h3>
+            <label class="formlabel">Rover: </label>
+                <label for="Operator">
+                    <input type="radio" name="Operator" id="Curiosity" value = "Curiosity"
+                           data-rule-required="true" data-msg-required="A Rover is Required"/>Curiosity
+                </label>
+                <label for="Operator">
+                    <input type="radio" name="Operator" id="Opprotunity" value = "Opprotunity">Opprotunity
+                </label>
+                <label for="Operator">
+                    <input type="radio" name="Operator" id="Spirit" value = "Spirit">Spirit
+                </label>
+            <label for="Operator" class="error" id="OperatorMsg"></label>
+            <br><br>
+            <label class="formlabel">Picture Date:</label>
+            <input type="date" name="PictureDate" id="PictureDate" 
+                data-rule-required="true" data-msg-required="Date is Required">
+            <label id="FromDateError" for="FromDate" class="error"></label><br>
+            <br>
+            <input type="button" value="Search" id="Search" name="Search" onclick="GetResults();">
+            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+            <hr>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
