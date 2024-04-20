@@ -12,63 +12,63 @@ function calculate() {
 
         // Operator
         // Get the value associated with the operator that was checked
-        var operator;
+        var FromUnit;
         if (document.getElementById("CentimetersOperators").checked) {
-            operator = document.getElementById("CentimetersOperators").value;
+            FromUnit = document.getElementById("CentimetersOperators").value;
         }
         if (document.getElementById("MetersOperators").checked) {
-            operator = document.getElementById("MetersOperators").value;
+            FromUnit = document.getElementById("MetersOperators").value;
         }
         if (document.getElementById("KilometersOperators").checked) {
-            operator = document.getElementById("KilometersOperators").value;
+            FromUnit = document.getElementById("KilometersOperators").value;
         }
         if (document.getElementById("InchesOperators").checked) {
-            operator = document.getElementById("InchesOperators").value;
+            FromUnit = document.getElementById("InchesOperators").value;
         }
         if (document.getElementById("FeetOperators").checked) {
-            operator = document.getElementById("FeetOperators").value;
+            FromUnit = document.getElementById("FeetOperators").value;
         }
         if (document.getElementById("YardsOperators").checked) {
-            operator = document.getElementById("YardsOperators").value;
+            FromUnit = document.getElementById("YardsOperators").value;
         }
         if (document.getElementById("MilesOperators").checked) {
-            operator = document.getElementById("MilesOperators").value;
+            FromUnit = document.getElementById("MilesOperators").value;
         }
 
-        var operator2;
+        var ToUnit;
         if (document.getElementById("CentimetersOperator").checked) {
-            operator2 = document.getElementById("CentimetersOperator").value;
+            ToUnit = document.getElementById("CentimetersOperator").value;
         }
         if (document.getElementById("MetersOperator").checked) {
-            operator2 = document.getElementById("MetersOperator").value;
+            ToUnit = document.getElementById("MetersOperator").value;
         }
         if (document.getElementById("KilometersOperator").checked) {
-            operator2 = document.getElementById("KilometersOperator").value;
+            ToUnit = document.getElementById("KilometersOperator").value;
         }
         if (document.getElementById("InchesOperator").checked) {
-            operator2 = document.getElementById("InchesOperator").value;
+            ToUnit = document.getElementById("InchesOperator").value;
         }
         if (document.getElementById("FeetOperator").checked) {
-            operator2 = document.getElementById("FeetOperator").value;
+            ToUnit = document.getElementById("FeetOperator").value;
         }
         if (document.getElementById("YardsOperator").checked) {
-            operator2 = document.getElementById("YardsOperator").value;
+            ToUnit = document.getElementById("YardsOperator").value;
         }
         if (document.getElementById("MilesOperator").checked) {
-            operator2 = document.getElementById("MilesOperator").value;
+            ToUnit = document.getElementById("MilesOperator").value;
         }
 
-        CalculateResult(FromValue, operator, operator2);
+        CalculateResult(FromValue, FromUnit, ToUnit);
     }
 }
 
-async function CalculateResult(FromValue, operator, operator2) {
+async function CalculateResult(FromValue, FromUnit, ToUnit) {
         
         // URL and method used with AJAX Call
         var myURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
 
         /* AJAX calculator requires Operand1, Operator, and Operand2 */
-        myURL = myURL + "?Operand1=" + encodeURIComponent(FromValue) + "&Operator=" + encodeURIComponent(operator) + "&Operator2=" + encodeURIComponent(operator2);
+        myURL = myURL + "?FromValue=" + encodeURIComponent(FromValue) + "&FromUnit=" + encodeURIComponent(FromUnit) + "&ToUnit=" + encodeURIComponent(ToUnit);
 
         /* fetch the results */
         let myCalcObject = await fetch(myURL);
@@ -83,16 +83,25 @@ function clearform() {
     /* Set all of the form values to blank or false */
     document.getElementById("FromValue").value = "";
     document.getElementById("Operand1Msg").innerHTML = "";
-    document.getElementById("AddOperator").checked = false;
-    document.getElementById("SubtractOperator").checked = false;
-    document.getElementById("MultiplyOperator").checked = false;
-    document.getElementById("DivideOperator").checked = false;
+    document.getElementById("CentimetersOperators").checked = false;
+    document.getElementById("MetersOperators").checked = false;
+    document.getElementById("KilometersOperators").checked = false;
+    document.getElementById("InchesOperators").checked = false;
+    document.getElementById("FeetOperators").checked = false;
+    document.getElementById("YardsOperators").checked = false;
+    document.getElementById("MilesOperators").checked = false;
+    document.getElementById("CentimetersOperator").checked = false;
+    document.getElementById("MetersOperator").checked = false;
+    document.getElementById("KilometersOperator").checked = false;
+    document.getElementById("InchesOperator").checked = false;
+    document.getElementById("FeetOperator").checked = false;
+    document.getElementById("YardsOperator").checked = false;
+    document.getElementById("MilesOperator").checked = false;
+    document.getElementById("OperatorError").innerHTML = "";
     document.getElementById("OperatorMsg").innerHTML = "";
-    document.getElementById("Operand2").value = "";
-    document.getElementById("Operand2Msg").innerHTML = "";
     document.getElementById("Result").innerHTML = "";
 }
 
-$( "#myform" ).validate({
+//$( "#myform" ).validate({
 
-});
+//});

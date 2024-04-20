@@ -27,6 +27,7 @@ header.primary nav ul{
 }
 
 header.primary nav ul li{
+  display: inline;
   margin-bottom:10px;
 }
 
