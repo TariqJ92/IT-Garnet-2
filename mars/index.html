@@ -12,11 +12,9 @@
 </head>
 
 <body>
-    <form id="myform">
         <div class="formcontainer">
-            <h2>Mars Rover Photo Explorer</h2>
+            <h1>Mars Rover Photo Explorer</h1>
             <section id="table">
-                <div class="output">
             <table border="1">
               <tr>
                 <th scope="col">Rover</th>
@@ -39,32 +37,112 @@
                 <td>03/21/2004</td>
               </tr>
             </table>
-                </div>
             </section>
-            <h3>Select a rover and a picture date:</h3>
+            <form id="myform">
+            <h2>Select a rover and a picture date:</h2>
             <label class="formlabel">Rover: </label>
-                <label for="Operator">
-                    <input type="radio" name="Operator" id="Curiosity" value = "Curiosity"
-                           data-rule-required="true" data-msg-required="A Rover is Required"/>Curiosity
+                <label for="Curiosity">
+                    <input type="radio" name="Rover" id="Curiosity" value = "Curiosity"
+                           data-rule-required="true" data-msg-required="A Rover is Required" onchange="GetCuriosity()">Curiosity
                 </label>
-                <label for="Operator">
-                    <input type="radio" name="Operator" id="Opprotunity" value = "Opprotunity">Opprotunity
+                <label for="Opprotunity">
+                    <input type="radio" name="Rover" id="Opprotunity" value = "Opprotunity" onchange="GetOpprotunity()">Opprotunity
                 </label>
-                <label for="Operator">
-                    <input type="radio" name="Operator" id="Spirit" value = "Spirit">Spirit
+                <label for="Spirit">
+                    <input type="radio" name="Rover" id="Spirit" value = "Spirit" onchange="GetSpirit()">Spirit
                 </label>
-            <label for="Operator" class="error" id="OperatorMsg"></label>
+                <label for="Rover" class="error" id="RoverError"></label>
             <br><br>
             <label class="formlabel">Picture Date:</label>
             <input type="date" name="PictureDate" id="PictureDate" 
                 data-rule-required="true" data-msg-required="Date is Required">
             <label id="FromDateError" for="FromDate" class="error"></label><br>
             <br>
-            <input type="button" value="Search" id="Search" name="Search" onclick="GetResults();">
-            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
-            <hr>
+            <input type="button" value="Search" id="Search" name="Search" onclick="GetPictures();"/>
+            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();"/>
+            <p id="numberofphotos"></p>
+            <hr />
+            <p id="Photo"></p>
+            <br />
+            <div id="PhotoGallery">
+            <a id="href0" href="">
+            <img src="#" id="image0" title="" width="250" height="250">
+            </a>
+            <a id="href1" href="">
+            <img src="#" id="image1" title="" width="250" height="250">
+            </a>
+            <a id="href2" href="">
+            <img src="#" id="image2" title="" width="250" height="250">
+            </a>
+            <a id="href3" href="">
+            <img src="#" id="image3" title="" width="250" height="250">
+            </a>
+            <a id="href4" href="">
+            <img src="#" id="image4" title="" width="250" height="250">
+            </a>
+            <a id="href5" href="">
+            <img src="#" id="image5" title="" width="250" height="250">
+            </a>
+            <a id="href6" href="">
+            <img src="#" id="image6" title="" width="250" height="250">
+            </a>
+            <a id="href7" href="">
+            <img src="#" id="image7" title="" width="250" height="250">
+            </a>
+            <a id="href8" href="">
+            <img src="#" id="image8" title="" width="250" height="250">
+            </a>
+            <a id="href9" href="">
+            <img src="#" id="image9" title="" width="250" height="250">
+            </a>
+            <a id="href10" href="">
+            <img src="#" id="image10" title="" width="250" height="250">
+            </a>
+            <a id="href11" href="">
+            <img src="#" id="image11" title=""width="250" height="250" >
+            </a>
+            <a id="href12" href="">
+            <img src="#" id="image12" title="" width="250" height="250">
+            </a>
+            <a id="href13" href="">
+            <img src="#" id="image13" title="" width="250" height="250">
+            </a>
+            <a id="href14" href="">
+            <img src="#" id="image14" title="" width="250" height="250">
+            </a>
+            <a id="href15" href="">
+            <img src="#" id="image15" title="" width="250" height="250">
+            </a>
+            <a id="href16" href="">
+            <img src="#" id="image16" title="" width="250" height="250">
+            </a>
+            <a id="href17" href="">
+            <img src="#" id="image17" title="" width="250" height="250">
+            </a>
+            <a id="href18" href="">
+            <img src="#" id="image18" title="" width="250" height="250">
+            </a>
+            <a id="href19" href="">
+            <img src="#" id="image19" title="" width="250" height="250">
+            </a>
+            <a id="href20" href="">
+            <img src="#" id="image20" title="" width="250" height="250">
+            </a>
+            <a id="href21" href="">
+            <img src="#" id="image21" title="" width="250" height="250">
+            </a>
+            <a id="href22" href="">
+            <img src="#" id="image22" title="" width="250" height="250">
+            </a>
+            <a id="href23" href="">
+            <img src="#" id="image23" title="" width="250" height="250">
+            </a>
+            <a id="href24" href="">
+            <img src="#" id="image24" title="" width="250" height="250">
+            </a>
         </div>
     </form>
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
